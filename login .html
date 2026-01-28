@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | MOVE N TRAVEL</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<form>
+  <h2>Login to MOVE N TRAVEL</h2>
+  <input type="email" placeholder="Email" required>
+  <input type="password" placeholder="Password" required>
+  <button class="btn">Login</button>
+<p style="text-align:center; margin-top:15px;">
+  Don’t have an account?
+  <a href="signup.html">Sign up</a>
+</p>
+<form>
+<script type="module">
+  import { auth } from "./js/firebase.js";
+  import { signInWithEmailAndPassword } from
+    "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const email = form.querySelector('input[type="email"]').value;
+    const password = form.querySelector('input[type="password"]').value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        window.location.href = "dashboard.html";
+      })
+      .catch(err => alert(err.message));
+  });
+</script>
+</body>
+</html>

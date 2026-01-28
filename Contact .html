@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | MOVE N TRAVEL</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>MOVE N TRAVEL</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="partners.html">Partners</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <input type="text" id="contactName" placeholder="Your Name" required>
+    <input type="email" id="contactEmail" placeholder="Email" required>
+    <textarea id="contactMessage" placeholder="Message" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+  <p><strong>Email:</strong> support@moven.travel</p>
+  <p><strong>Phone:</strong> +91 9876543210</p>
+</section>
+
+<script>
+const contactForm = document.getElementById("contactForm");
+if(contactForm){
+  contactForm.addEventListener("submit", e => {
+    e.preventDefault();
+    alert("Thank you! Your message has been sent.");
+    contactForm.reset();
+  });
+}
+</script>
+
+</body>
+</html>

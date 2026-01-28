@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Registration | MOVE N TRAVEL</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>MOVE N TRAVEL</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Partner Registration</h2>
+  <p>Register your hotel, travel service, or package.</p>
+  <form id="partnerForm">
+    <input type="text" id="businessName" placeholder="Business Name" required>
+    <input type="text" id="ownerName" placeholder="Owner Name" required>
+    <input type="email" id="partnerEmail" placeholder="Email" required>
+    <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+    <select id="serviceType" required>
+      <option value="">Select Service Type</option>
+      <option>Hotel</option>
+      <option>Car/Traveler</option>
+      <option>Tour Package Provider</option>
+      <option>Adventure Activities</option>
+    </select>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</section>
+
+<script type="module" src="js/partner.js"></script>
+<script type="module" src="js/auth.js"></script>
+</body>
+</html>
