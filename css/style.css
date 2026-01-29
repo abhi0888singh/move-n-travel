@@ -214,10 +214,20 @@ footer {
   color: #ff6d38;
 }
 /* ✅ Packages Page Banner Image Fix */
-
 .packages-banner img {
   width: 100%;
-  max-height: 450px;   /* Normal height */
-  object-fit: cover;   /* Crop nicely */
+  max-height: 450px;   /* Normal height for desktop */
+  object-fit: cover;   /* Crop nicely for desktop */
   border-radius: 10px;
+  display: block;
+}
+
+/* Mobile-friendly banner */
+@media (max-width: 768px) {
+  .packages-banner img {
+    height: auto;         /* Let height adjust automatically */
+    max-height: 300px;    /* Optional: limit banner height on mobile */
+    object-fit: contain;  /* Show the full image without cropping */
+    border-radius: 10px;
+  }
 }
