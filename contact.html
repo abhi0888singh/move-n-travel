@@ -1,45 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | MOVE N TRAVEL</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | MOVE N TRAVEL</title>
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header>
-  <h1>MOVE N TRAVEL</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="packages.html">Packages</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="partners.html">Partners</a>
-  </nav>
-</header>
+  <!-- HEADER -->
+  <header>
+    <h1>MOVE N TRAVEL</h1>
 
-<section>
-  <h2>Contact Us</h2>
-  <form id="contactForm">
-    <input type="text" id="contactName" placeholder="Your Name" required>
-    <input type="email" id="contactEmail" placeholder="Email" required>
-    <textarea id="contactMessage" placeholder="Message" required></textarea>
-    <button type="submit" class="btn">Send Message</button>
-  </form>
-  <p><strong>Email:</strong> support@moven.travel</p>
-  <p><strong>Phone:</strong> +91 9876543210</p>
-</section>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="packages.html">Packages</a>
+      <a href="partners.html">Partners</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
 
-<script>
-const contactForm = document.getElementById("contactForm");
-if(contactForm){
-  contactForm.addEventListener("submit", e => {
-    e.preventDefault();
-    alert("Thank you! Your message has been sent.");
-    contactForm.reset();
-  });
-}
-</script>
+
+  <!-- CONTACT HERO -->
+  <section class="page-hero">
+    <h2>Contact Us</h2>
+    <p>We are here to help you plan your next journey ✈️</p>
+  </section>
+
+
+  <!-- CONTACT FORM -->
+  <section class="form-section">
+
+    <div class="form-card">
+
+      <h3>Send Us a Message</h3>
+
+      <form>
+
+        <div class="form-group">
+          <input type="text" placeholder="Your Full Name" required>
+          <input type="email" placeholder="Your Email Address" required>
+        </div>
+
+        <textarea placeholder="Write your message..." rows="5" required></textarea>
+
+        <button type="submit" class="btn-main">Send Message</button>
+
+      </form>
+
+      <!-- CONTACT INFO -->
+      <div class="contact-info">
+        <p><strong>Email:</strong> support@moven.travel</p>
+        <p><strong>Phone:</strong> +91 9876543210</p>
+        <p><strong>Location:</strong> Gurgaon, Haryana, India</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 MOVE N TRAVEL | Always ready for your next trip 🌍
+  </footer>
 
 </body>
 </html>
