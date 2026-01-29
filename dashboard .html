@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | MOVE N TRAVEL</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .dashboard { max-width:700px; margin:50px auto; background:#fff; padding:40px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
+  .dashboard h2 { text-align:center; margin-bottom:20px; }
+  .dashboard a { display:block; margin:10px 0; text-decoration:none; color:#0077cc; font-weight:bold; }
+  .dashboard a:hover { color:#005fa3; }
+  #userEmail { text-align:center; margin-bottom:20px; font-size:16px; }
+  #logoutBtn { width:100%; max-width:200px; margin:20px auto; display:block; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>MOVE N TRAVEL</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="partners.html">Partners</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="dashboard">
+  <h2>Dashboard</h2>
+  <p id="userEmail"></p>
+  <a href="partners.html">Register Your Partner Service</a>
+  <a href="packages.html">View Travel Packages</a>
+  <button id="logoutBtn" class="btn">Logout</button>
+</div>
+
+<script type="module" src="js/auth.js"></script>
+</body>
+</html>
