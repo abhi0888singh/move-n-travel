@@ -4,20 +4,19 @@ import {
   signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-const loginForm = document.getElementById("loginForm");
-
-loginForm.addEventListener("submit", (e) => {
+// ✅ Form Submit
+document.getElementById("loginForm").addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  let email = document.getElementById("loginEmail").value;
+  let password = document.getElementById("loginPassword").value;
 
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
-      alert("Login Successful ✅");
+      alert("✅ Login Successful!");
       window.location.href = "dashboard.html";
     })
     .catch((error) => {
-      alert("Login Error ❌: " + error.message);
+      alert("❌ Login Failed: " + error.message);
     });
 });
