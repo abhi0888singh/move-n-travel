@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - Move N Travel</title>
 
-  <!-- CSS Link -->
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
 
-  <!-- ✅ LOGIN FORM -->
   <form id="loginForm">
 
     <h2>Login to MOVE N TRAVEL</h2>
@@ -19,6 +17,11 @@
     <input type="email" id="email" placeholder="Email" required />
 
     <input type="password" id="password" placeholder="Password" required />
+
+    <!-- ✅ Forgot Password -->
+    <p style="text-align:right; margin-top:5px;">
+      <a href="#" id="forgotPass">Forgot Password?</a>
+    </p>
 
     <button type="submit" class="btn">Login</button>
 
@@ -30,34 +33,55 @@
   </form>
 
 
-  <!-- ✅ FIREBASE LOGIN SCRIPT -->
   <script type="module">
 
     import { auth } from "./js/firebase.js";
 
-    import { signInWithEmailAndPassword } from
-      "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import {
+      signInWithEmailAndPassword,
+      sendPasswordResetEmail
+    } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 
-    // ✅ Form Select
+    // ✅ Login Form
     const form = document.getElementById("loginForm");
 
-    // ✅ Submit Event
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      // ✅ Input Values
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
-      // ✅ Firebase Login
       signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-          alert("Login Successful!");
+          alert("Login Successful ✅");
           window.location.href = "dashboard.html";
         })
         .catch((error) => {
-          alert("Error: " + error.message);
+          alert("Login Error: " + error.message);
+        });
+    });
+
+
+    // ✅ Forgot Password Reset
+    const forgotBtn = document.getElementById("forgotPass");
+
+    forgotBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+
+      if (!email) {
+        alert("Enter your email first!");
+        return;
+      }
+
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          alert("Password reset link sent to your email ✅");
+        })
+        .catch((error) => {
+          alert("Reset Error: " + error.message);
         });
     });
 
