@@ -260,7 +260,112 @@ button:hover {
   border-radius: 8px;
   text-decoration: none;
 }
+/* ============================= */
+/* PAGE HERO (Partners + Contact) */
+/* ============================= */
+.page-hero {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(to right, orange, darkorange);
+  color: white;
+}
 
+.page-hero h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.page-hero p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* ============================= */
+/* FORM SECTION */
+/* ============================= */
+.form-section {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.form-card {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+.form-card h3 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+/* GROUP INPUTS */
+.form-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.form-group input,
+.form-group select {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-bottom: 20px;
+  resize: none;
+}
+
+/* BUTTON */
+.btn-main {
+  width: 100%;
+  padding: 14px;
+  background: orange;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-main:hover {
+  background: darkorange;
+}
+
+/* CONTACT INFO */
+.contact-info {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media(max-width: 600px) {
+
+  .page-hero h2 {
+    font-size: 28px;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+}
 .btn:hover {
   background: darkorange;
 }
