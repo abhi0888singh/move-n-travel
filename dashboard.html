@@ -1,39 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard | MOVE N TRAVEL</title>
-<link rel="stylesheet" href="css/style.css">
-<style>
-  .dashboard { max-width:700px; margin:50px auto; background:#fff; padding:40px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
-  .dashboard h2 { text-align:center; margin-bottom:20px; }
-  .dashboard a { display:block; margin:10px 0; text-decoration:none; color:#0077cc; font-weight:bold; }
-  .dashboard a:hover { color:#005fa3; }
-  #userEmail { text-align:center; margin-bottom:20px; font-size:16px; }
-  #logoutBtn { width:100%; max-width:200px; margin:20px auto; display:block; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | MOVE N TRAVEL</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      background: #f5f7fb;
+    }
+
+    header {
+      background: linear-gradient(to right, #ff512f, #f09819);
+      padding: 20px;
+      color: white;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .user-box {
+      text-align: center;
+      margin: 30px auto;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #ff512f;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 10px;
+      background: #ff512f;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: black;
+    }
+  </style>
+
 </head>
+
 <body>
 
-<header>
-  <h1>MOVE N TRAVEL</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="packages.html">Packages</a>
-    <a href="partners.html">Partners</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <header>
+    Welcome to MOVE N TRAVEL Dashboard ✈️
+  </header>
 
-<div class="dashboard">
-  <h2>Dashboard</h2>
-  <p id="userEmail"></p>
-  <a href="partners.html">Register Your Partner Service</a>
-  <a href="packages.html">View Travel Packages</a>
-  <button id="logoutBtn" class="btn">Logout</button>
-</div>
+  <div class="user-box">
+    👤 Logged in as: <span id="userEmail">Loading...</span>
+  </div>
 
-<script type="module" src="js/auth.js"></script>
+  <div class="cards">
+
+    <div class="card">
+      <a href="packages.html">🌍 View Packages</a>
+    </div>
+
+    <div class="card">
+      <a href="partners.html">🏨 Register Partner</a>
+    </div>
+
+    <div class="card">
+      <a href="contact.html">📩 Contact Support</a>
+    </div>
+
+  </div>
+
+  <button id="logoutBtn">Logout</button>
+
+  <script type="module" src="js/dashboard.js"></script>
+
 </body>
 </html>
