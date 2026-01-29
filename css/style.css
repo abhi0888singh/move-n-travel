@@ -29,7 +29,129 @@ header h1 {
   font-size: 28px;
   margin-bottom: 8px;
 }
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+.hero {
+  height: 85vh;
+  background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+    no-repeat center center/cover;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+  max-width: 650px;
+}
+
+.hero-content h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+/* SEARCH BOX */
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-box input {
+  padding: 12px;
+  width: 320px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  background: orange;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background: darkorange;
+}
+
+/* ============================= */
+/* STATS SECTION */
+/* ============================= */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: -60px auto 40px;
+  max-width: 1000px;
+}
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.stat-card h3 {
+  font-size: 28px;
+  color: orange;
+}
+
+.stat-card p {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  margin-top: 30px;
+  font-size: 14px;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
+}
+
+/* ============================= */
+/* MOBILE RESPONSIVE */
+/* ============================= */
+@media(max-width: 600px) {
+
+  .hero-content h2 {
+    font-size: 28px;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .stat-card {
+    width: 90%;
+  }
+}
 nav {
   display: flex;
   justify-content: center;
