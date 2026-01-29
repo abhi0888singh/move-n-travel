@@ -213,3 +213,11 @@ footer {
   font-size: 32px;
   color: #ff6d38;
 }
+/* ✅ Packages Page Banner Image Fix */
+
+.packages-banner img {
+  width: 100%;
+  max-height: 450px;   /* Normal height */
+  object-fit: cover;   /* Crop nicely */
+  border-radius: 10px;
+}
