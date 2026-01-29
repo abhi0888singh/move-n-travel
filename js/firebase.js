@@ -1,13 +1,11 @@
-// ✅ Firebase App
+// ✅ Import Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 
-// ✅ Firebase Auth
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import {
+  getAuth
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-// ✅ Firestore (optional)
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-// ✅ Firebase Config
+// ✅ Firebase Config (YOUR PROJECT)
 const firebaseConfig = {
   apiKey: "AIzaSyCGsWteoWmrvy2tvJ-s7LEwrrzddvobcJY",
   authDomain: "move-n-travel.firebaseapp.com",
@@ -17,9 +15,8 @@ const firebaseConfig = {
   appId: "1:558385612046:web:1e54375d890b208fdec35f"
 };
 
-// ✅ Initialize Firebase
+// ✅ Initialize Firebase App
 const app = initializeApp(firebaseConfig);
 
-// ✅ Export Auth + DB
+// ✅ Export Auth
 export const auth = getAuth(app);
-export const db = getFirestore(app);
