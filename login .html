@@ -1,42 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login | MOVE N TRAVEL</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Move N Travel</title>
+
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
+
 <body>
 
-<form>
-  <h2>Login to MOVE N TRAVEL</h2>
-  <input type="email" placeholder="Email" required>
-  <input type="password" placeholder="Password" required>
-  <button class="btn">Login</button>
-<p style="text-align:center; margin-top:15px;">
-  Don’t have an account?
-  <a href="signup.html">Sign up</a>
-</p>
-<form>
-<script type="module">
-  import { auth } from "./js/firebase.js";
-  import { signInWithEmailAndPassword } from
-    "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  <!-- ✅ LOGIN FORM -->
+  <form id="loginForm">
 
-  const form = document.querySelector("form");
+    <h2>Login to MOVE N TRAVEL</h2>
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    <input type="email" id="email" placeholder="Email" required />
 
-    const email = form.querySelector('input[type="email"]').value;
-    const password = form.querySelector('input[type="password"]').value;
+    <input type="password" id="password" placeholder="Password" required />
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        window.location.href = "dashboard.html";
-      })
-      .catch(err => alert(err.message));
-  });
-</script>
+    <button type="submit" class="btn">Login</button>
+
+    <p style="text-align:center; margin-top:15px;">
+      Don’t have an account?
+      <a href="signup.html">Sign up</a>
+    </p>
+
+  </form>
+
+
+  <!-- ✅ FIREBASE LOGIN SCRIPT -->
+  <script type="module">
+
+    import { auth } from "./js/firebase.js";
+
+    import { signInWithEmailAndPassword } from
+      "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+
+    // ✅ Form Select
+    const form = document.getElementById("loginForm");
+
+    // ✅ Submit Event
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // ✅ Input Values
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // ✅ Firebase Login
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          alert("Login Successful!");
+          window.location.href = "dashboard.html";
+        })
+        .catch((error) => {
+          alert("Error: " + error.message);
+        });
+    });
+
+  </script>
+
 </body>
 </html>
