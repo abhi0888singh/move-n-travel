@@ -2,108 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard | MOVE N TRAVEL</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Poppins, sans-serif;
-      background: #f5f7fb;
-    }
-
-    header {
-      background: linear-gradient(to right, #ff512f, #f09819);
-      padding: 20px;
-      color: white;
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .user-box {
-      text-align: center;
-      margin: 30px auto;
-      font-size: 18px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card a {
-      text-decoration: none;
-      color: #ff512f;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    button {
-      display: block;
-      margin: 30px auto;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 10px;
-      background: #ff512f;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: black;
-    }
-  </style>
-
+  <link rel="stylesheet" href="modern.css">
 </head>
-
 <body>
 
-  <header>
-    Welcome to MOVE N TRAVEL Dashboard ✈️
-  </header>
+<header class="topbar">
+  <h1>🚀 MOVE N TRAVEL Dashboard</h1>
+</header>
 
-  <div class="user-box">
-    👤 Logged in as: <span id="userEmail">Loading...</span>
+<main class="dashboard-box">
+  <h2 id="userEmail">Loading...</h2>
+
+  <div class="dash-links">
+    <a href="packages.html">🌍 Explore Packages</a>
+    <a href="contact.html">📩 Contact Support</a>
+    <a href="partners.html">🤝 Travel Partners</a>
   </div>
 
-  <div class="cards">
+  <button id="logoutBtn">Logout 🔒</button>
 
-    <div class="card">
-      <a href="packages.html">🌍 View Packages</a>
-    </div>
+  <p class="credit">Founder: Abhijeet Singh © 2026</p>
+</main>
 
-    <div class="card">
-      <a href="partners.html">🏨 Register Partner</a>
-    </div>
-
-    <div class="card">
-      <a href="contact.html">📩 Contact Support</a>
-    </div>
-
-  </div>
-
-  <button id="logoutBtn">Logout</button>
-
-  <script type="module" src="js/dashboard.js"></script>
-
+<script type="module" src="js/dashboard.js"></script>
 </body>
 </html>
