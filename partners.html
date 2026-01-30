@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Partners | MOVE N TRAVEL</title>
-  <link rel="stylesheet" href="css/modern.css">
+  <link rel="stylesheet" href="modern.css">
 </head>
-
 <body>
 
-  <div class="animated-bg"></div>
+<header class="topbar">
+  <h1>🤝 Our Trusted Travel Partners</h1>
+</header>
 
-  <div class="glass-box">
-    <h1>🤝 Partner Registration</h1>
-    <p>Join MOVE N TRAVEL as partner</p>
+<section class="package-section">
+  <h2>Verified Partners for Customer Support</h2>
 
-    <form id="partnerForm">
+  <div class="package-grid">
 
-      <input type="text" id="businessName" placeholder="Business Name" required>
-      <input type="text" id="ownerName" placeholder="Owner Name" required>
-      <input type="email" id="partnerEmail" placeholder="Email" required>
-      <input type="text" id="phone" placeholder="Phone Number" required>
+    <div class="card">
+      <h3>✈️ SkyTours Agency</h3>
+      <p>Flights + Hotel Booking Partner</p>
+      <p><b>Contact:</b> +91 98765 43210</p>
+    </div>
 
-      <select id="serviceType" required>
-        <option value="">Select Service</option>
-        <option value="Hotel">Hotel</option>
-        <option value="Cab">Cab</option>
-        <option value="Agency">Travel Agency</option>
-      </select>
+    <div class="card">
+      <h3>🏨 Luxury Stay India</h3>
+      <p>Premium Hotels Partner</p>
+      <p><b>Email:</b> support@luxstay.com</p>
+    </div>
 
-      <button type="submit">Submit 🚀</button>
+    <div class="card">
+      <h3>🚖 Local Cab Services</h3>
+      <p>Pickup & Drop Partner</p>
+      <p><b>WhatsApp:</b> +91 99999 11111</p>
+    </div>
 
-      <h3 id="partnerMsg"></h3>
-
-    </form>
   </div>
+</section>
 
-  <script type="module" src="js/partners.js"></script>
+<footer>
+  <p>© 2026 MOVE N TRAVEL | Founder Abhijeet Singh</p>
+</footer>
 
 </body>
 </html>
