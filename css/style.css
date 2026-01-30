@@ -146,3 +146,59 @@ footer {
     padding: 15px;
   }
 }
+/* ✅ PACKAGE GRID */
+#packageList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
+
+/* ✅ PACKAGE CARD */
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* Package Image */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Package Text */
+.card h3 {
+  margin: 12px;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 0 12px 12px;
+  font-size: 14px;
+  color: gray;
+}
+
+/* Book Button */
+.card button {
+  margin: 12px;
+  width: calc(100% - 24px);
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: orange;
+}
