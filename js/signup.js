@@ -1,4 +1,5 @@
 import { auth } from "./firebase.js";
+
 import {
   createUserWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
@@ -9,10 +10,10 @@ const msg = document.getElementById("signupMsg");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const email = form.email.value;
-  const password = form.password.value;
+  let email = document.getElementById("signupEmail").value;
+  let pass = document.getElementById("signupPassword").value;
 
-  createUserWithEmailAndPassword(auth, email, password)
+  createUserWithEmailAndPassword(auth, email, pass)
     .then(() => {
       msg.innerHTML = "✅ Signup Successful! Redirecting...";
       msg.style.color = "lime";
