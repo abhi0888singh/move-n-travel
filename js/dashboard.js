@@ -1,17 +1,11 @@
 import { auth } from "./firebase.js";
+import { onAuthStateChanged, signOut } from
+  "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
-import {
-  onAuthStateChanged,
-  signOut
-} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
-
-const userText = document.getElementById("userEmail");
 const logoutBtn = document.getElementById("logoutBtn");
 
 onAuthStateChanged(auth, (user) => {
-  if (user) {
-    userText.innerHTML = "Welcome: " + user.email;
-  } else {
+  if (!user) {
     window.location.href = "login.html";
   }
 });
