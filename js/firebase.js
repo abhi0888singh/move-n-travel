@@ -1,5 +1,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
+
+import {
+  getAuth
+} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+
+import {
+  getFirestore
+} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCGsWteoWmrvy2tvJ-s7LEwrrzddvobcJY",
@@ -7,10 +14,10 @@ const firebaseConfig = {
   projectId: "move-n-travel",
   storageBucket: "move-n-travel.firebasestorage.app",
   messagingSenderId: "558385612046",
-  appId: "1:558385612046:web:1e54375d890b208fdec35f",
-  measurementId: "G-CZFGVW2FTL"
+  appId: "1:558385612046:web:1e54375d890b208fdec35f"
 };
 
 const app = initializeApp(firebaseConfig);
 
+export const auth = getAuth(app);
 export const db = getFirestore(app);
