@@ -11,11 +11,15 @@ const msg = document.getElementById("contactMsg");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  let name = document.getElementById("cName").value;
+  let email = document.getElementById("cEmail").value;
+  let message = document.getElementById("cMessage").value;
+
   try {
-    await addDoc(collection(db, "contacts"), {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
+    await addDoc(collection(db, "messages"), {
+      name,
+      email,
+      message,
       time: new Date()
     });
 
@@ -24,7 +28,7 @@ form.addEventListener("submit", async (e) => {
 
     form.reset();
   } catch (err) {
-    msg.innerHTML = "❌ Error! Please try again.";
+    msg.innerHTML = "❌ Error Sending Message!";
     msg.style.color = "red";
   }
 });
