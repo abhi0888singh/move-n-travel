@@ -5,86 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Packages | MOVE N TRAVEL</title>
 
-  <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- ✅ HEADER -->
-  <header>
-    <h1>MOVE N TRAVEL</h1>
+<header>
+  <h1>Travel Packages</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="packages.html">Packages</a>
-      <a href="partners.html">Partners</a>
-      <a href="contact.html">Contact</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
+<!-- Package Cards -->
+<div id="packageList">
 
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80">
+    <h3>Goa Beach Trip</h3>
+    <p>3 Nights • ₹12,999</p>
+  </div>
 
-  <!-- ✅ PAGE TITLE -->
-  <section style="text-align:center; padding:30px;">
-    <h2>Our Travel Packages</h2>
-    <p>Choose the best holiday package for your trip ✈️</p>
-  </section>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80">
+    <h3>Dubai Luxury Tour</h3>
+    <p>5 Nights • ₹49,999</p>
+  </div>
 
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80">
+    <h3>Manali Adventure</h3>
+    <p>4 Nights • ₹15,999</p>
+  </div>
 
-  <!-- ✅ PACKAGE LIST CONTAINER -->
-  <div id="packageList"></div>
+</div>
 
-
-  <!-- ✅ PACKAGES SCRIPT -->
-  <script>
-    const packages = [
-      {
-        name: "Goa Beach Holiday",
-        price: "₹15,000",
-        duration: "3 Nights / 4 Days",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
-      },
-      {
-        name: "Manali Snow Trip",
-        price: "₹18,500",
-        duration: "4 Nights / 5 Days",
-        image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470"
-      },
-      {
-        name: "Kerala Backwaters",
-        price: "₹20,000",
-        duration: "4 Nights / 5 Days",
-        image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944"
-      },
-      {
-        name: "Rajasthan Desert Safari",
-        price: "₹22,000",
-        duration: "5 Nights / 6 Days",
-        image: "https://images.unsplash.com/photo-1589308078054-832d49c4b14b"
-      }
-    ];
-
-    // ✅ Container
-    const container = document.getElementById("packageList");
-
-    // ✅ Loop Packages
-    packages.forEach(pkg => {
-
-      const div = document.createElement("div");
-      div.className = "card";
-
-      div.innerHTML = `
-        <img src="${pkg.image}" alt="${pkg.name}">
-        <h3>${pkg.name}</h3>
-        <p><strong>Price:</strong> ${pkg.price}</p>
-        <p><strong>Duration:</strong> ${pkg.duration}</p>
-        <a href="package-detail.html" class="btn">View Details</a>
-      `;
-
-      container.appendChild(div);
-    });
-  </script>
+<footer>
+  <p>© 2026 MOVE N TRAVEL</p>
+</footer>
 
 </body>
 </html>
