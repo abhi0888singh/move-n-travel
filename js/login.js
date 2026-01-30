@@ -10,10 +10,10 @@ const msg = document.getElementById("loginMsg");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const email = form.email.value;
-  const password = form.password.value;
+  let email = document.getElementById("loginEmail").value;
+  let pass = document.getElementById("loginPassword").value;
 
-  signInWithEmailAndPassword(auth, email, password)
+  signInWithEmailAndPassword(auth, email, pass)
     .then(() => {
       msg.innerHTML = "✅ Login Successful! Redirecting...";
       msg.style.color = "lime";
