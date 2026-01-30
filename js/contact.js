@@ -2,42 +2,29 @@ import { db } from "./firebase.js";
 
 import {
   collection,
-  addDoc,
-  serverTimestamp
+  addDoc
 } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
 
 const form = document.getElementById("contactForm");
-const msg = document.getElementById("successMsg");
+const msg = document.getElementById("contactMsg");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  // Show Loading
-  msg.innerHTML = "⏳ Sending Message...";
-  msg.style.color = "yellow";
-
-  // Get Input Values
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
   try {
-    // Save Message to Firestore
-    await addDoc(collection(db, "contactMessages"), {
-      name: name,
-      email: email,
-      message: message,
-      createdAt: serverTimestamp()
+    await addDoc(collection(db, "contacts"), {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+      time: new Date()
     });
 
     msg.innerHTML = "✅ Message Sent Successfully!";
     msg.style.color = "lime";
 
     form.reset();
-
-  } catch (error) {
+  } catch (err) {
     msg.innerHTML = "❌ Error! Please try again.";
     msg.style.color = "red";
-    console.log("Contact Error:", error);
   }
 });
