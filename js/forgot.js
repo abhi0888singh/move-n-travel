@@ -4,17 +4,18 @@ import {
   sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
-const btn = document.getElementById("forgotBtn");
-const emailInput = document.getElementById("email");
-const msg = document.getElementById("loginMsg");
+const form = document.getElementById("forgotForm");
+const msg = document.getElementById("forgotMsg");
 
-btn.addEventListener("click", () => {
-  const email = emailInput.value;
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let email = document.getElementById("forgotEmail").value;
 
   sendPasswordResetEmail(auth, email)
     .then(() => {
-      msg.innerHTML = "✅ Reset Email Sent!";
-      msg.style.color = "yellow";
+      msg.innerHTML = "✅ Reset Link Sent to Email!";
+      msg.style.color = "lime";
     })
     .catch((error) => {
       msg.innerHTML = "❌ " + error.message;
