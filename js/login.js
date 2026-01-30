@@ -1,8 +1,6 @@
 import { auth } from "./firebase.js";
-
-import {
-  signInWithEmailAndPassword
-} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+import { signInWithEmailAndPassword } from
+  "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
 const form = document.getElementById("loginForm");
 const msg = document.getElementById("loginMsg");
@@ -10,20 +8,20 @@ const msg = document.getElementById("loginMsg");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  let email = document.getElementById("loginEmail").value;
-  let pass = document.getElementById("loginPassword").value;
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
 
-  signInWithEmailAndPassword(auth, email, pass)
+  signInWithEmailAndPassword(auth, email, password)
     .then(() => {
-      msg.innerHTML = "✅ Login Successful! Redirecting...";
       msg.style.color = "lime";
+      msg.innerText = "Login Successful ✅ Redirecting...";
 
       setTimeout(() => {
         window.location.href = "dashboard.html";
-      }, 1500);
+      }, 1200);
     })
     .catch((error) => {
-      msg.innerHTML = "❌ " + error.message;
       msg.style.color = "red";
+      msg.innerText = error.message;
     });
 });
