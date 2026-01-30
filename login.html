@@ -5,36 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | MOVE N TRAVEL</title>
 
-  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/modern.css">
 </head>
 
 <body>
 
-  <div class="auth-container">
+  <!-- Background -->
+  <div class="animated-bg"></div>
 
-    <div class="auth-card">
+  <div class="glass-box">
+    <h1>Login</h1>
+    <p>Login to access dashboard</p>
 
-      <h2>Welcome Back ✈️</h2>
-      <p>Login to explore amazing travel packages</p>
+    <form id="loginForm">
 
-      <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" required>
 
-        <input type="email" id="loginEmail" placeholder="Enter Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
 
-        <input type="password" id="loginPassword" placeholder="Enter Password" required>
+      <button type="submit">Login 🚀</button>
 
-        <button type="submit">Login</button>
-
-      </form>
-
-      <p class="switch-link">
-        New user? <a href="signup.html">Create Account</a>
+      <p style="margin-top:15px;">
+        Don’t have an account?
+        <a href="signup.html" style="color:yellow;">Signup</a>
       </p>
 
-    </div>
+    </form>
 
+    <h3 id="loginMsg"></h3>
   </div>
-<script type="module" src="js/login.js"></script>
+
+  <script type="module" src="js/login.js"></script>
+
 </body>
 </html>
-
