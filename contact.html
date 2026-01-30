@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Contact | MOVE N TRAVEL</title>
-  <link rel="stylesheet" href="css/modern.css">
+  <link rel="stylesheet" href="auth.css">
 </head>
-
 <body>
 
-  <div class="animated-bg"></div>
+<div class="animated-bg"></div>
 
-  <div class="glass-box">
-    <h1>📩 Contact Us</h1>
-    <p>Send your message to our team</p>
+<div class="glass-box">
+  <h2>📩 Contact Us</h2>
+  <p>Send your message to our team</p>
 
-    <form id="contactForm">
+  <form id="contactForm">
+    <input type="text" id="cName" placeholder="Your Name" required>
+    <input type="email" id="cEmail" placeholder="Your Email" required>
+    <textarea id="cMessage" placeholder="Your Message..." required></textarea>
 
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="email" id="email" placeholder="Email Address" required>
+    <button type="submit">Send 🚀</button>
+  </form>
 
-      <textarea id="message" placeholder="Write your message..." required></textarea>
+  <p id="contactMsg"></p>
 
-      <button type="submit">Send 🚀</button>
+  <p class="credit">MOVE N TRAVEL Support | Founder Abhijeet Singh</p>
+</div>
 
-      <h3 id="successMsg"></h3>
-
-    </form>
-  </div>
-
-  <script type="module" src="js/contact.js"></script>
-
+<script type="module" src="js/contact.js"></script>
 </body>
 </html>
