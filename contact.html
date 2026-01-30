@@ -1,72 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | MOVE N TRAVEL</title>
-
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/modern.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>MOVE N TRAVEL</h1>
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="packages.html">Packages</a>
-      <a href="partners.html">Partners</a>
-      <a href="contact.html" class="active">Contact</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
+  <!-- Glass Form -->
+  <div class="glass-box">
 
+    <h1>📩 Contact MOVE N TRAVEL</h1>
+    <p>Send us your query. Our team will reply fast 🚀</p>
 
-  <!-- CONTACT HERO -->
-  <section class="page-hero">
-    <h2>Contact Us</h2>
-    <p>We are here to help you plan your next journey ✈️</p>
-  </section>
+    <form id="contactForm">
 
+      <input type="text" id="name" placeholder="Full Name" required>
 
-  <!-- CONTACT FORM -->
-  <section class="form-section">
+      <input type="email" id="email" placeholder="Email Address" required>
 
-    <div class="form-card">
+      <textarea id="message" placeholder="Write your message..." required></textarea>
 
-      <h3>Send Us a Message</h3>
+      <button type="submit">Send Message 🚀</button>
 
-      <form>
+      <h3 id="successMsg"></h3>
 
-        <div class="form-group">
-          <input type="text" placeholder="Your Full Name" required>
-          <input type="email" placeholder="Your Email Address" required>
-        </div>
+    </form>
 
-        <textarea placeholder="Write your message..." rows="5" required></textarea>
+  </div>
 
-        <button type="submit" class="btn-main">Send Message</button>
-
-      </form>
-
-      <!-- CONTACT INFO -->
-      <div class="contact-info">
-        <p><strong>Email:</strong> support@moven.travel</p>
-        <p><strong>Phone:</strong> +91 9876543210</p>
-        <p><strong>Location:</strong> Gurgaon, Haryana, India</p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer>
-    © 2026 MOVE N TRAVEL | Always ready for your next trip 🌍
-  </footer>
+  <script type="module" src="js/contact.js"></script>
 
 </body>
 </html>
