@@ -12,17 +12,21 @@ const msg = document.getElementById("successMsg");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  msg.innerHTML = "⏳ Sending...";
+  // Show Loading
+  msg.innerHTML = "⏳ Sending Message...";
+  msg.style.color = "yellow";
 
+  // Get Input Values
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
 
   try {
+    // Save Message to Firestore
     await addDoc(collection(db, "contactMessages"), {
-      name,
-      email,
-      message,
+      name: name,
+      email: email,
+      message: message,
       createdAt: serverTimestamp()
     });
 
@@ -32,8 +36,8 @@ form.addEventListener("submit", async (e) => {
     form.reset();
 
   } catch (error) {
-    msg.innerHTML = "❌ Error! Try again.";
+    msg.innerHTML = "❌ Error! Please try again.";
     msg.style.color = "red";
-    console.log(error);
+    console.log("Contact Error:", error);
   }
 });
