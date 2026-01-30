@@ -12,8 +12,11 @@ const msg = document.getElementById("partnerMsg");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  msg.innerHTML = "⏳ Submitting...";
+  // Loading Message
+  msg.innerHTML = "⏳ Submitting Request...";
+  msg.style.color = "yellow";
 
+  // Input Values
   const businessName = document.getElementById("businessName").value;
   const ownerName = document.getElementById("ownerName").value;
   const email = document.getElementById("partnerEmail").value;
@@ -21,23 +24,24 @@ form.addEventListener("submit", async (e) => {
   const serviceType = document.getElementById("serviceType").value;
 
   try {
+    // Save Partner Request in Firestore
     await addDoc(collection(db, "partnerRequests"), {
-      businessName,
-      ownerName,
-      email,
-      phone,
-      serviceType,
+      businessName: businessName,
+      ownerName: ownerName,
+      email: email,
+      phone: phone,
+      serviceType: serviceType,
       createdAt: serverTimestamp()
     });
 
-    msg.innerHTML = "✅ Partner Request Submitted!";
+    msg.innerHTML = "✅ Partner Request Submitted Successfully!";
     msg.style.color = "lime";
 
     form.reset();
 
   } catch (error) {
-    msg.innerHTML = "❌ Error! Try Again.";
+    msg.innerHTML = "❌ Error! Please try again.";
     msg.style.color = "red";
-    console.log(error);
+    console.log("Partner Error:", error);
   }
 });
