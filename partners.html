@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Partner Registration | MOVE N TRAVEL</title>
+
+  <!-- Modern High-Tech CSS -->
   <link rel="stylesheet" href="css/modern.css">
 </head>
 
 <body>
 
-  <!-- Animated Background -->
+  <!-- ✅ Animated Background -->
   <div class="animated-bg"></div>
 
+  <!-- ✅ Glass Partner Box -->
   <div class="glass-box">
 
-    <h1>🤝 Become a Partner</h1>
-    <p>Register your hotel, agency or package with us.</p>
+    <h1>🤝 Become Our Partner</h1>
+    <p>Register your hotel, cab or travel service with MOVE N TRAVEL 🌍</p>
 
+    <!-- Partner Form -->
     <form id="partnerForm">
 
       <input type="text" id="businessName" placeholder="Business Name" required>
 
       <input type="text" id="ownerName" placeholder="Owner Name" required>
 
-      <input type="email" id="partnerEmail" placeholder="Email" required>
+      <input type="email" id="partnerEmail" placeholder="Email Address" required>
 
       <input type="text" id="phone" placeholder="Phone Number" required>
 
       <select id="serviceType" required>
         <option value="">Select Service Type</option>
-        <option value="Hotel">🏨 Hotel</option>
+        <option value="Hotel">🏨 Hotel Partner</option>
+        <option value="Cab">🚖 Cab Service</option>
         <option value="Travel Agency">✈ Travel Agency</option>
-        <option value="Tour Package">🧳 Tour Package</option>
+        <option value="Tour Package">🧳 Tour Package Provider</option>
       </select>
 
       <button type="submit">Submit Request 🚀</button>
 
+      <!-- Success/Error Message -->
       <h3 id="partnerMsg"></h3>
 
     </form>
 
   </div>
 
+  <!-- Firebase Partner Script -->
   <script type="module" src="js/partners.js"></script>
 
 </body>
