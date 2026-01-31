@@ -1,32 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Signup | MOVE N TRAVEL</title>
-  <link rel="stylesheet" href="auth.css">
+  <title>Signup</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="animated-bg"></div>
+<div class="auth-box">
+  <h2>Create Account</h2>
 
-<div class="glass-box">
-  <h2>📝 Signup</h2>
-  <p>Create your MOVE N TRAVEL account</p>
+  <input type="email" id="signupEmail" placeholder="Email">
+  <input type="password" id="signupPassword" placeholder="Password">
 
-  <form id="signupForm">
-    <input type="email" id="signupEmail" placeholder="Enter Email" required>
-    <input type="password" id="signupPassword" placeholder="Create Password" required>
+  <button onclick="signupUser()" class="btn big">Signup</button>
 
-    <button type="submit">Signup ✅</button>
-  </form>
+  <p id="msg"></p>
 
-  <p id="signupMsg"></p>
-
-  <p>
-    Already have account? <a href="login.html">Login</a>
-  </p>
+  <p>Already have account? <a href="login.html">Login</a></p>
 </div>
 
-<script type="module" src="js/signup.js"></script>
+<script type="module" src="js/auth.js"></script>
 </body>
 </html>
