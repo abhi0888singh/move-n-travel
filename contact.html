@@ -2,30 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact | MOVE N TRAVEL</title>
-  <link rel="stylesheet" href="auth.css">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="animated-bg"></div>
+<header class="navbar">
+  <h2 class="logo">MoveNTravel</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="partner.html">Partner</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-<div class="glass-box">
-  <h2>📩 Contact Us</h2>
-  <p>Send your message to our team</p>
+<section class="banner">
+  <h1>Contact Our Support Team</h1>
+  <p>We reply within 24 hours 🚀</p>
+</section>
 
-  <form id="contactForm">
-    <input type="text" id="cName" placeholder="Your Name" required>
-    <input type="email" id="cEmail" placeholder="Your Email" required>
-    <textarea id="cMessage" placeholder="Your Message..." required></textarea>
+<section class="contact-section">
+  <div class="contact-box">
 
-    <button type="submit">Send 🚀</button>
-  </form>
+    <h2>Send Message</h2>
 
-  <p id="contactMsg"></p>
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <textarea id="message" placeholder="Your Message"></textarea>
 
-  <p class="credit">MOVE N TRAVEL Support | Founder Abhijeet Singh</p>
-</div>
+    <button class="btn big" onclick="sendMessage()">Send Message</button>
 
-<script type="module" src="js/contact.js"></script>
+    <p id="contactMsg"></p>
+
+  </div>
+</section>
+
+<script src="js/main.js"></script>
 </body>
 </html>
