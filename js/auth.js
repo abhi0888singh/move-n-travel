@@ -1,33 +1,57 @@
-// ✅ Import Firebase Auth
 import { auth } from "./firebase.js";
 
 import {
-  onAuthStateChanged,
-  signOut
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-// ✅ Elements
-const userEmail = document.getElementById("userEmail");
-const logoutBtn = document.getElementById("logoutBtn");
+// Signup
+window.signupUser = function () {
+  let email = document.getElementById("signupEmail").value;
+  let password = document.getElementById("signupPassword").value;
 
-// ✅ Protect Dashboard Page
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    userEmail.innerText = "Logged in as: " + user.email;
-  } else {
-    alert("Please login first!");
-    window.location.href = "login.html";
-  }
-});
-
-// ✅ Logout Function
-logoutBtn.addEventListener("click", () => {
-  signOut(auth)
+  createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
-      alert("Logged out successfully!");
-      window.location.href = "login.html";
+      document.getElementById("msg").innerHTML =
+        "✅ Signup Successful!";
     })
     .catch((error) => {
-      alert("Logout Error: " + error.message);
+      document.getElementById("msg").innerHTML =
+        "❌ " + error.message;
     });
-});
+};
+
+// Login
+window.loginUser = function () {
+  let email = document.getElementById("loginEmail").value;
+  let password = document.getElementById("loginPassword").value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      document.getElementById("msg").innerHTML =
+        "✅ Login Successful!";
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1500);
+    })
+    .catch((error) => {
+      document.getElementById("msg").innerHTML =
+        "❌ " + error.message;
+    });
+};
+
+// Reset Password
+window.resetPassword = function () {
+  let email = document.getElementById("resetEmail").value;
+
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      document.getElementById("msg").innerHTML =
+        "✅ Reset Link Sent!";
+    })
+    .catch((error) => {
+      document.getElementById("msg").innerHTML =
+        "❌ " + error.message;
+    });
+};
