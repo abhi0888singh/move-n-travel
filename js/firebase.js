@@ -3,9 +3,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
+  apiKey: "AIzaSyCGsWteoWmrvy2tvJ-s7LEwrrzddvobcJY",
+  authDomain: "move-n-travel.firebaseapp.com",
+  projectId: "move-n-travel",
+  storageBucket: "move-n-travel.firebasestorage.app",
+  messagingSenderId: "558385612046",
+  appId: "1:558385612046:web:1e54375d890b208fdec35f",
+  measurementId: "G-CZFGVW2FTL"
 };
 
 const app = initializeApp(firebaseConfig);
