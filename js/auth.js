@@ -1,57 +1,71 @@
 import { auth } from "./firebase.js";
 
 import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail
+
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+sendPasswordResetEmail
+
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-// Signup
-window.signupUser = function () {
-  let email = document.getElementById("signupEmail").value;
-  let password = document.getElementById("signupPassword").value;
+window.signupUser=function(){
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      document.getElementById("msg").innerHTML =
-        "✅ Signup Successful!";
-    })
-    .catch((error) => {
-      document.getElementById("msg").innerHTML =
-        "❌ " + error.message;
-    });
-};
+let email=document.getElementById("signupEmail").value;
+let pass=document.getElementById("signupPass").value;
 
-// Login
-window.loginUser = function () {
-  let email = document.getElementById("loginEmail").value;
-  let password = document.getElementById("loginPassword").value;
+createUserWithEmailAndPassword(auth,email,pass)
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      document.getElementById("msg").innerHTML =
-        "✅ Login Successful!";
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 1500);
-    })
-    .catch((error) => {
-      document.getElementById("msg").innerHTML =
-        "❌ " + error.message;
-    });
-};
+.then(()=>{
 
-// Reset Password
-window.resetPassword = function () {
-  let email = document.getElementById("resetEmail").value;
+document.getElementById("signupMsg").innerHTML="Signup successful";
 
-  sendPasswordResetEmail(auth, email)
-    .then(() => {
-      document.getElementById("msg").innerHTML =
-        "✅ Reset Link Sent!";
-    })
-    .catch((error) => {
-      document.getElementById("msg").innerHTML =
-        "❌ " + error.message;
-    });
-};
+setTimeout(()=>{
+
+window.location="login.html";
+
+},1500)
+
+})
+
+.catch(e=>alert(e.message))
+
+}
+
+window.loginUser=function(){
+
+let email=document.getElementById("email").value;
+let pass=document.getElementById("password").value;
+
+signInWithEmailAndPassword(auth,email,pass)
+
+.then(()=>{
+
+document.getElementById("msg").innerHTML="Login successful";
+
+setTimeout(()=>{
+
+window.location="dashboard.html";
+
+},1500)
+
+})
+
+.catch(e=>alert(e.message))
+
+}
+
+window.resetPassword=function(){
+
+let email=document.getElementById("resetEmail").value;
+
+sendPasswordResetEmail(auth,email)
+
+.then(()=>{
+
+document.getElementById("resetMsg").innerHTML="Reset email sent"
+
+})
+
+.catch(e=>alert(e.message))
+
+}
